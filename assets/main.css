@@ -1,0 +1,489 @@
+body {
+    overflow: hidden;
+}
+button {
+    font-family: 'Segoe UI' !important;
+}
+
+    /* Begin Aero theming */
+    
+    .win-frame.resizable {
+        resize:both;
+        overflow:hidden;
+    }
+    .win-frame {
+        
+        user-select: none;
+        text-shadow: 0px 0px 4px #fff, 0px 0px 8px #fff, 0px 0px 12px #fff;
+        box-shadow: 0 0 8px #000;
+        backdrop-filter: blur(5px);
+        background-color: #a0b1ac7f;
+        padding: 6px;
+        border-radius: 8px;
+        outline: 1px solid #000;
+        border: 1px solid #fff;
+        background-image: url(reflection_vista.png);
+        background-attachment: fixed;
+    }
+
+
+.win-frame::before {
+  background-image: url("reflection_vista.png"); /* any noise/ice PNG */
+}
+
+    .win-title {
+        height: 4px;
+        padding-left: 2px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        align-items: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .win-body {
+        background-color: #fff;
+        outline: 1px solid #C2D3E4;
+        border: 1px solid #153551;
+        border-top-left-radius: 1px;
+        border-top-right-radius: 1px;
+        padding: 4px;
+        height: calc(100% - 32px);
+        overflow:auto;
+
+    }
+
+    .win-controls {
+        position: absolute;
+        right: 5px;
+        top: 0px;
+    }
+    .win-close {
+        display: inline-block;
+        background-image: url(x-aero.png);
+        width: 49px;
+        height: 20px;
+    }
+    .win-maximize {
+        display: inline-block;
+        background-image: url(max-aero.png);
+        width: 26px;
+        height: 20px;
+    }
+    .win-minimize {
+        display: inline-block;
+        background-image: url(min-aero.png);
+        width: 30px;
+        height: 20px;
+    }
+
+
+.taskbar::before {
+  top: 0;
+  background-color: #0C3A52;  /* dark line */
+}
+
+.taskbar::after {
+  top: 1px;
+  background-color: #83C2E2;  /* bright highlight line */
+}
+
+
+    .start-button {
+        position: fixed;
+        bottom: -10px;
+        left: 0px;
+        width: 54px;
+        height: 54px;
+        background-image: url('start.png');
+        background-position: 0 0;
+        transition: transform 0.15s ease-in-ease-out;
+    }
+    .start-button:hover {
+        background-position: 0 -54px;
+    }
+    .start-button:active {
+        background-position: 0 -108px;
+    }
+
+/* Windows 7 Aero Dialog */
+.aero-dialog {
+  width: 500px;
+  min-height: 300px;
+  background: rgba(240, 245, 255, 0.85);
+  border: 1px solid rgba(100, 130, 180, 0.8);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 80px rgba(70, 130, 180, 0.2);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  overflow: hidden;
+}
+
+/* Title Bar */
+.aero-titlebar {
+  height: 30px;
+  background: linear-gradient(
+    to bottom,
+    rgba(185, 209, 234, 0.9) 0%,
+    rgba(161, 194, 230, 0.9) 50%,
+    rgba(144, 186, 228, 0.9) 51%,
+    rgba(185, 209, 234, 0.9) 100%
+  );
+  border-bottom: 1px solid rgba(100, 130, 180, 0.6);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  position: relative;
+}
+
+.aero-titlebar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* Title Text */
+.aero-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #1a1a1a;
+  flex: 1;
+}
+
+.aero-title-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Window Controls */
+.aero-controls {
+  display: flex;
+  gap: 2px;
+}
+
+.aero-button {
+  width: 28px;
+  height: 22px;
+  border: 1px solid rgba(100, 130, 180, 0.3);
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(230, 240, 250, 0.5)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.aero-button:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(230, 245, 255, 0.9),
+    rgba(200, 225, 245, 0.8)
+  );
+  border-color: rgba(60, 120, 180, 0.6);
+}
+
+.aero-button:active {
+  background: linear-gradient(
+    to bottom,
+    rgba(180, 210, 240, 0.8),
+    rgba(200, 220, 240, 0.7)
+  );
+}
+
+.aero-button.close:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(230, 90, 70, 0.9),
+    rgba(200, 60, 50, 0.8)
+  );
+}
+
+/* Menu Bar */
+.aero-menubar {
+  background: rgba(245, 250, 255, 0.7);
+  border-bottom: 1px solid rgba(200, 215, 230, 0.6);
+  padding: 2px 8px;
+  display: flex;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.aero-menu-item {
+  padding: 3px 8px;
+  cursor: pointer;
+  color: #000;
+}
+
+.aero-menu-item:hover {
+  background: rgba(180, 210, 240, 0.5);
+}
+
+/* Content Area */
+.aero-content {
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.95);
+  min-height: 250px;
+}
+.taskbar-time {
+    color: #fff;
+    font-size: 9pt;
+}
+.login-username {
+    font-size: 16pt;
+    font-weight: 600;
+    text-shadow: 0px 0px 1px #000, 0px 0px 2px #000, 0px 0px 3px #000, 0px 0px 4px #000;
+}
+/* Begin AaronOS widget theming */
+#taskbar{
+ box-shadow:0 -1px rgba(255, 255, 255, 0.8), 0 -2px rgba(0, 0, 0, 0.6);
+}
+.window{
+ box-shadow:0 0 0 1px rgba(255, 255, 255, 0.8), 0 0 0 2px rgba(0, 0, 0, 0.6), 0 0 30px #000 !important;
+}
+.winExit, .winBig, .winShrink, .winFld{
+ border-color:rgba(0, 0, 0, 0.4);
+ color:#FFF;
+ text-shadow:0 0 1px #000;
+ top:-2px;
+}
+.winFld{
+    border-top-left-radius:0;
+    border-top-right-radius:0;
+    margin-left:-1px;
+ box-shadow:0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 8px 4px rgba(255, 255, 255, 0.4);
+}
+.winExit{
+ border-bottom-left-radius:0;
+ border-top-left-radius:0;
+ border-top-right-radius:0;
+ width:42px;
+ margin-right:-1px;
+ background-color:#D44;
+ box-shadow:1px 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 8px 4px rgba(255, 255, 255, 0.4);
+}
+.winBig{
+ border-radius:0;
+ width:20px;
+ margin-right:21px;
+ box-shadow:0 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 8px 4px rgba(255, 255, 255, 0.4);
+}
+.winShrink{
+ border-bottom-right-radius:0;
+ border-top-left-radius:0;
+ border-top-right-radius:0;
+ width:22px;
+ margin-right:21px;
+ box-shadow:-1px 1px 0 rgba(255, 255, 255, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.4), inset 0 8px 4px rgba(255, 255, 255, 0.4);
+}
+.winBig:hover, .winShrink:hover, .winFld:hover{
+ background-color:#57D;
+ color:#FFF;
+ border-color:rgba(0, 0, 0, 0.4);
+ box-shadow:0 0 10px 2px #BAF, inset 0 8px 4px rgba(255, 255, 255, 0.4);
+}
+.winExit:hover{
+ background-color:#D64;
+ color:#FFF;
+ box-shadow:0 0 10px 2px #FAA, inset 0 8px 4px rgba(255, 255, 255, 0.4);
+ border-color:rgba(0, 0, 0, 0.4);
+}
+.winBig:active, .winShrink:active, .winFld:active{
+ background-color:#03A;
+}
+.winExit:active{
+ background-color:#A30;
+}
+#notifWindow .winExit{
+ border-bottom-left-radius:5px;
+ color:#FFF;
+}
+.winCap{
+ color:#000;
+ text-shadow:0 0 10px #FFF;
+ font-family:sans-serif;
+}
+.winHTML{
+ background: #F0F0F0;
+ box-shadow:0 0 0 1px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.6) !important;
+}
+
+
+
+
+button {
+    background-color: #FFF;
+    box-shadow: inset 0 0 5px #CCC;
+    border-radius: 5px;
+    color: #333;
+    border: 1px solid #333;
+    outline: none;
+    transition: 0.2s;
+    cursor: inherit;
+    user-select: none;
+}
+
+
+
+
+
+
+button, .darkMode button{
+ font-family: 'Segoe UI' !important;
+ color:#000;
+ border-radius:3px;
+ border-color:#7F7F7F;
+ border-style: 1px solid;
+ background:linear-gradient(0deg, #D0D0D0 0%, #D7D7D7 40%, #EEE 60%, #F7F7F7 100%);
+ box-shadow:inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+ outline:none;
+ transition:0.3s;
+}
+button:hover, button:focus, .darkMode button:hover, .darkMode button:focus{
+ border-color:#7087d0;
+ box-shadow:inset 0 0 0 1px rgba(235, 235, 255, 0.65);
+ background-image:linear-gradient(0deg, #D0D0D0 0%, #D7D7D7 40%, #EEE 60%, #F7F7F7 100%);
+ background-color:rgba(205, 220, 255, 0.65);
+ background-blend-mode:luminosity;
+}
+button:active, .darkMode button:active{
+ border-color:#5067b0;
+ box-shadow:inset 0 0 3px #67D, inset 0 8px 4px rgba(255, 255, 255, 0.6);
+ background-image:linear-gradient(0deg, #D0D0D0 0%, #D7D7D7 40%, #EEE 60%, #F7F7F7 100%);
+ background-color:rgba(150, 175, 255, 0.65);
+ background-blend-mode:soft-light;
+}
+input, textarea{
+ border-color:#EEE;
+ border-top-color:#AAA;
+ border-radius:3px;
+ outline:none;
+}
+input:hover, input:focus, input:active, textarea:hover, textarea:focus, textarea:active{
+ border-color:#CDF;
+ border-top-color:#89B;
+}
+hr{
+ background:linear-gradient(90deg, rgba(100, 127, 150, 0) 0%, rgba(100, 127, 150, 0.3) 10%, rgba(100, 127, 150, 0.3) 90%, rgba(100, 127, 150, 0) 100%);
+ height:1px;
+ border:none;
+}
+#ctxMenu{
+ border-color:#CCC;
+ border-radius:0;
+ background-color:#F2F2F2 !important;
+ backdrop-filter:none;
+}
+#ctxMenu hr{
+ background-color:#D7D7D7;
+ border-radius: 0;
+ border: none;
+ margin-left:14px;
+ width:calc(100% - 14px);
+}
+#ctxMenu p{
+ transition: 0s;
+ color: #000;
+ border-radius:3px;
+ background-color:#F2F2F2;
+ box-shadow:none;
+}
+#ctxMenu p:hover{
+ transition: 0s;
+ box-shadow:inset 0 0 3px #67D;
+ background:none;
+ color: #000;
+}
+
+.msgbox {
+  display: flex;
+  align-items: flex-start; /* don’t center vertically */
+  padding: 10px 13px;
+}
+
+.msgbox-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  margin-right: 12px;
+  margin-top: 8px; /* pushes the icon down slightly so text starts at its vertical middle */
+}
+
+.msgbox-text {
+  line-height: 1.4;
+  position: relative;
+  top: 24px;
+}
+
+
+.msgbox-buttons {
+
+    background-color: #f0f0f0;
+    border-top: 1px solid #dfdfdf;
+    position: absolute;
+    bottom: 5px;
+    left: 7px;
+    width: calc(100% - 14px);
+    height: 40px;
+    right: 8px;
+}
+.msgbox-buttons-inner {
+    box-sizing: border-box;
+    border: 10px;
+; 
+}
+.msgbox-buttons button {
+    float: right;
+}
+.msgbox-buttons-inner button {
+    position: relative;
+    top: 9px;
+    right: 11px;
+    width: 64px;
+
+}
+
+
+
+
+        .context-menu {
+            position: absolute;
+            text-align: center;
+            background: #f0f0f0;
+            border: 1px solid black;
+            padding: 4px;
+        }
+
+        .context-menu ul {
+            padding: 0px;
+            margin: 0px;
+            min-width: 150px;
+            list-style: none;
+        }
+
+        .context-menu ul li {
+            padding-bottom: 4px;
+            padding-top: 4px;
+        }
+
+        .context-menu ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .context-menu ul li:hover {
+            background: darkgray;
+        }
