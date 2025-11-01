@@ -455,12 +455,23 @@ hr{
  background:none;
  color: #000;
 }
+.user-frame-80 {
+  background-image: url(assets/12221.png);
+  background-size: cover;
+  width: 48px;
+  height: 48px;
+  padding-right: 16px;
+  padding-left: 16px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  margin-left: 5px;
 
+}
 </style>
 <body id="body" onload="initTimeUpdate(); initWindow();">
     <div id="login" class="login-screen" style="display: flex;">
         <div class="login-contents">
-            <img src="assets/defaultuser.png" class="user-frame-128" />
+            <div class="user-frame-80"><img src="assets/defaultuser.png" width="48" height="48" /></div>
             <p class="login-username">Simulator</p>
             <button onclick="logIn()">Log in</button>
         </div>
