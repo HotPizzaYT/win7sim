@@ -126,16 +126,37 @@
         -webkit-backdrop-filter: blur(5px);
     }
     .desktop-item {
+        margin: 0px;
         text-align:center;
-        min-height: 70px;
-        width: 76px;
+        width: 72px;
+        margin-bottom: 30px;
         border-radius: 2px;
-        display: block;
         text-shadow: 0px 0px 4px #000, 0px 0px 2px #000, 0px 0px 4px #000, 0px 0px 6px #000;
         color: #fff;
+        min-height: 66px;
+        max-height: 81px;
+
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;      /* show up to 2 lines */
+        line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        padding: 1px;
+        border: 1px;
     }
     .desktop-item:active {
-        background-color: #A0C0EB
+        -webkit-line-clamp: none;      /* show up to 2 lines */
+        line-clamp: none;
+        text-overflow: clip;
+        max-height: 300px;
+        overflow:visible;
+        margin: 0px;
+        margin-bottom: 30px;
+        background-color: #A0C0EB;
+        padding: 1px solid #6B9BD6;
+        border: 1px solid #B7D0F1;
     }
 /* top accent lines */
 .taskbar::before,
